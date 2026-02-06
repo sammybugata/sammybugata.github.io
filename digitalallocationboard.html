@@ -12,15 +12,14 @@
 </head>
 
 <body>
-    <body id="top">
+    <body class="project-page" id="top">
 
     <header>
     <nav>
-        <h3>Sammy Bugata</h3>
+        <h3 class="logo"><a href="index.html">Sammy Bugata</a></h3>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
     </nav>
     </header>
@@ -83,7 +82,7 @@
 
             <div class="section-content">
             <p>
-            During this university to industry project, I designed and developed a digital allocation platform to improve the shift allocation experience for both coordinators and nurses. As the UX/UI designer and front-end developer, I led the end-to-end process for the design and development of the shift coordinator’s experience, spanning user research, information architecture, and front-end development using HTML, CSS, and JavaScript.
+            During this university to industry project, I designed and developed a digital allocation platform to improve the shift allocation experience for both coordinators and nurses. As the UX/UI designer and front-end developer, I led the end-to-end process for the design and development of the shift coordinator’s experience, spanning user research, prototyping, and front-end development using HTML, CSS, and JavaScript.
             </p>
 
             <p>
@@ -91,7 +90,7 @@
             </p>
 
             <p>
-            <strong>Tools:</strong> Figma, HTML, CSS, JavaScript, VS Code, GitHub
+            <strong>Tools:</strong> Figma, HTML, CSS, JavaScript, API Integration, FHIR, GitHub
             </p>
 
             </div>
@@ -159,11 +158,11 @@
 
             <div class="section-content">
                 <p>
-                    Using Figma, I translated the information architecture into wireframes, creating both low- and high-fidelity versions to map the user flow and to refine interactions, navigation flows and layouts through iterative testing.
+                    Using Figma, I translated the information architecture into low fidelity wireframes to map the user flow and to refine interactions, navigation flows and layouts through iterative testing.
                 </p>
 
                 <p>
-                    The initial design of the shift coordinator user flow featured three pages: the dashboard, requests and schedule. Initial feedback in the first cycle inspired further exploration for the schedule for assignment and overview of theatres. The next iterations explores it with a list view of the meal relief staff so coordinators can see an overview of the different kinds of staff they are in charge of assigning.
+                    The initial design of the shift coordinator user flow featured three pages: the dashboard, requests page and schedule page. Feedback in the first iteration cycle inspired further exploration for the assignment schedule and theatre overview. The next iterations explore it with a list view of the meal relief staff so coordinators can see an overview of the different kinds of staff can be reassigned.
                 </p>
             </div>
         </section>
@@ -177,7 +176,7 @@
 
             <div class="section-heading">
                 <span class="dot"></span>
-                <h3>GOALS & KEY PRIORITIES</h3>
+                <h3>GOALS & KEY FEATURES</h3>
             </div>
 
             <div class="section-content">
@@ -270,6 +269,10 @@
             </a>
         </nav>
     </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Expanded view" id="lightbox-img" />
+    </div>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>

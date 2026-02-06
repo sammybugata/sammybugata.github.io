@@ -1,30 +1,34 @@
+if (
+  document.body.classList.contains("home") ||
+  document.body.classList.contains("about-page")
+) {
 
-const glow = document.createElement("div");
-glow.classList.add("cursor-glow");
-document.body.appendChild(glow);
+  const glow = document.createElement("div");
+  glow.classList.add("cursor-glow");
+  document.body.appendChild(glow);
 
-let mouseX = 0;
-let mouseY = 0;
-let glowX = 0;
-let glowY = 0;
+  let mouseX = 0;
+  let mouseY = 0;
+  let glowX = 0;
+  let glowY = 0;
 
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
 
-function animate() {
-  // Adjust 0.08 for more/less delay
-  glowX += (mouseX - glowX) * 0.08;
-  glowY += (mouseY - glowY) * 0.08;
+  function animate() {
+    glowX += (mouseX - glowX) * 0.08;
+    glowY += (mouseY - glowY) * 0.08;
 
-  glow.style.left = glowX + "px";
-  glow.style.top = glowY + "px";
+    glow.style.left = glowX + "px";
+    glow.style.top = glowY + "px";
 
-  requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 }
-
-animate();
 
 
 
@@ -89,3 +93,27 @@ function typeEffect() {
 }
 
 document.addEventListener("DOMContentLoaded", typeEffect);
+
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+document.querySelectorAll(".project-details img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("active");
+    lightboxImg.src = img.src;
+  });
+});
+
+// Close when clicking outside image
+lightbox.addEventListener("click", (e) => {
+  if (e.target !== lightboxImg) {
+    lightbox.classList.remove("active");
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    lightbox.classList.remove("active");
+  }
+});
