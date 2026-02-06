@@ -8,9 +8,44 @@
 /* Base styles */
 body {
   margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: system-ui, -apple-system, sans-serif;
+  background: #fff;
+  color: #000;
+  font-family: Helvetica, -apple-system, sans-serif;
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+
+  background: radial-gradient(
+    circle,
+    #8855FF 0%,
+    #8855FF 20%,
+    #8855FF 40%,
+    #8855FF 60%,
+    transparent 100%
+  );
+
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+  z-index: -1; 
+}
+
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
 }
 
 html {
@@ -36,16 +71,18 @@ nav a {
   text-decoration: none;
   color: inherit;
   font-weight: 500;
+  padding: 0.4rem 0.8rem; /* important for box space */
+  border-radius: 10pt;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 nav a:hover {
-  text-decoration: solid;
-  color: #D3E715;
+  color: #fff;
 }
 
 nav a.active {
-  color: #D3E715;
-  border-bottom: 2px solid #D3E715;
+  border: 2px solid #8855FF;
+  color: #8855FF;
 }
 
 nav img {
@@ -62,6 +99,8 @@ nav img {
 
 .hero-content {
   max-width: 720px;
+  margin: 0 0 50pt 0;
+
 }
 
 .hero h1 {
@@ -77,7 +116,7 @@ nav img {
   right: 4rem;
 
   width: 560px;
-  height: 500px;
+  height: 450px;
   aspect-ratio: 3 / 4;
   border-radius: 20px;
   overflow: hidden;
@@ -93,8 +132,9 @@ nav img {
 
 .divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.15);
-  margin: 4rem 0;
+  background: #000;
+  margin: 50pt 0 20pt 0;
+  width: 100%;
 }
 
 .wordmark {
@@ -103,7 +143,7 @@ nav img {
 }
 
 .wordmark h2 {
-  font-size: clamp(6rem, 20vw, 13rem);
+  font-size: 145pt;
   font-weight: 600;
   letter-spacing: -0.05em;
   line-height: 0.85;
@@ -141,17 +181,54 @@ h4 {
 }
 
 
-
 /* Projects section - Homepage */
 .projects {
-  /* padding: 4rem 0; */
-  padding: 30pt;
+  padding: 0pt 30pt 30pt 30pt;
+}
+
+.project-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 30pt 0 0 0;
+  margin-top: 40pt;
+  margin-bottom: 120pt;
+}
+
+.project-details-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin: 60px auto;
+  max-width: 1000px; /* keeps it centered and neat */
+}
+
+/* Make the image sit on its own row */
+.project-details img {
+  grid-column: 1 / -1;   /* spans both columns */
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: block;
+  margin: 2rem auto 0;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem 2rem;
+  margin: 0 0 30pt 0;
+}
+
+.section-heading h2 {
+  font-size: 20pt;
+  font-weight: 500;
+}
+
+.projects-image {
+  display: grid;
+  gap: 3rem 2rem;
+  margin: 0 0 30pt 0;
 }
 
 .project-card {
@@ -210,9 +287,10 @@ h4 {
     font-size: 30pt;
     font-weight: 400;
 }
+/* Footer section - Homepage */
 
 footer{
-    padding: 0pt 30pt 50pt 30pt;
+    padding: 0pt 10pt 30pt 10pt;
 }
 
 .back-to-top {
@@ -223,6 +301,355 @@ footer{
   transform: translateY(-2px);
   opacity: 0.8;
 }
+
+/* Hero section - About Page */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 30pt;
+  margin-top: 40pt;
+  margin-bottom: 120pt;
+}
+
+.intro-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  display: block;
+}
+
+.intro-image {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-content h1 {
+  font-size: 50pt;
+  margin-bottom: 1.25rem;
+}
+
+.intro-content p {
+  font-size: 15pt;
+  max-width: 55ch;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.projects-header{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.projects-header h2 {
+  font-size: 40pt;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+}
+
+.projects-header p {
+  font-size: 15pt;
+  max-width: 55ch;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.projects-header img{
+  width: 100%;
+  height: 75%;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+.typing {
+  color: #8855FF;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 0ch;
+}
+
+.typing::after {
+  content: "|";
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+
+.about-details p {
+  font-size: 12pt;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.titles {
+  text-align: center;
+}
+
+
+.titles h2 {
+  font-size: 15pt;
+  font-family: Helvetica, -apple-system, sans-serif;
+  color: #8855FF;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+.about-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+
+/* Reverse layout */
+.about-row.reverse {
+  direction: rtl;
+}
+
+.about-row.reverse .about-text,
+.about-row.reverse .about-image {
+  direction: ltr;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;   /* fixed height */
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* keeps proportions */
+  display: block;
+}
+
+.about-details p {
+  font-size: 14pt;
+  line-height: 1.7;
+  max-width: 100%;
+}
+
+.about-grid {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.creative-grid {
+  margin-top: 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.creative-item {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.creative-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* crops nicely */
+  display: block;
+}
+
+.creative-item img {
+  transition: transform 0.4s ease;
+}
+
+.creative-item:hover img {
+  transform: scale(1.05);
+}
+
+.creative-title {
+    max-width: 80%;
+    margin: 4rem auto 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    font-size: 14pt;
+}
+
+.credentials {
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  margin-bottom: 150pt;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.credentials-column h2 {
+  margin-bottom: 2rem;
+  font-size: 20pt;
+}
+
+.credential-item {
+  margin-bottom: 1.5rem;
+}
+
+.credential-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.credential-header h3 {
+  font-size: 14pt;
+  font-weight: 600;
+}
+
+.credential-header span {
+  font-size: 14pt;
+  opacity: 0.6;
+}
+
+.credential-item p {
+  margin-top: 0.4rem;
+  font-size: 12pt;
+  opacity: 0.8;
+}
+
+.divider-line {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+}
+
+ /* Schooled */
+ .project-section {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+  margin-bottom: 5rem;
+  align-items: start; /* aligns both columns at the top */
+}
+
+/* LEFT COLUMN */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #6B4EFF; /* or your purple */
+  border-radius: 50%;
+  flex-shrink: 0;   /* THIS is the key */
+}
+
+
+.section-heading h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Purple dot */
+.dot {
+  width: 20px;
+  height: 20px;
+  background-color: #7B5CFF;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.section-heading h3 {
+  font-size: 20pt;
+}
+
+/* RIGHT COLUMN */
+.section-content p {
+  font-size: 15pt;
+  margin: 0;
+  padding-left: 25pt;
+  margin-bottom: 10pt;
+  line-height: 1.7;
+  max-width: 65ch;
+  opacity: 0.9;
+}
+
+.project-section {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 3rem;
+  margin: 0 auto 5rem auto;   /* centers it */
+  align-items: start;
+
+  max-width: 1000px;          /* controls readable width */
+  width: 90%;                 /* responsive margin on sides */
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 3rem;
+}
+
+@media (max-width: 900px) {
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .about-row,
+  .about-row.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .creative-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .credentials {
+    grid-template-columns: 1fr;
+  }
+
+  .project-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .creative-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 @media (max-width: 768px) {
     .hero {
