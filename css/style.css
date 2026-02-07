@@ -148,12 +148,11 @@ nav img {
 
 .hero-content {
   max-width: 720px;
-  margin: 0 0 50pt 0;
-
+  margin: 0 0 20pt 0;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: 30pt;
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -165,7 +164,7 @@ nav img {
   right: 4rem;
 
   width: 560px;
-  height: 450px;
+  height: 375px;
   aspect-ratio: 3 / 4;
   border-radius: 20px;
   overflow: hidden;
@@ -192,7 +191,7 @@ nav img {
 }
 
 .wordmark h2 {
-  font-size: 145pt;
+  font-size: 119pt;
   font-weight: 600;
   letter-spacing: -0.05em;
   line-height: 0.85;
@@ -244,6 +243,38 @@ h4 {
   gap: 2rem;
   align-items: center;
 }
+
+.project-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 80vh; /* makes it feel more immersive */
+}
+
+/* LEFT COLUMN (text) */
+.project-info .text-column {
+  padding: 150px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* RIGHT COLUMN (image) */
+.project-info .image-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-info .image-column img {
+  width: 100%;
+  /* max-width: 600px; */
+  height: 100%;
+  object-fit: cover; /* fills column without warping */
+}
+
 
 .project-details-three {
   display: grid;
@@ -545,7 +576,7 @@ footer{
 }
 
 .about-details p {
-  font-size: 14pt;
+  font-size: 12pt;
   line-height: 1.7;
   max-width: 100%;
 }
@@ -616,6 +647,13 @@ footer{
 
 .credential-item {
   margin-bottom: 1.5rem;
+}
+
+.credential-item ul {
+  list-style-type: disc;
+  font-size: 12pt;
+  padding-left: 20pt;
+  margin-bottom: 10pt;
 }
 
 .credential-header {
@@ -690,6 +728,13 @@ footer{
   line-height: 1.7;
   max-width: 65ch;
   opacity: 0.9;
+}
+
+.section-content ul {
+  list-style-type: disc;
+  font-size: 15pt;
+  padding-left: 40pt;
+  margin-bottom: 10pt;
 }
 
 
