@@ -778,6 +778,10 @@ footer{
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  .creative-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -805,4 +809,35 @@ footer{
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+      .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .about-row,
+  .about-row.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .creative-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .credentials {
+    grid-template-columns: 1fr;
+  }
+
+  .project-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .creative-grid {
+    grid-template-columns: 1fr;
+  }
 }
