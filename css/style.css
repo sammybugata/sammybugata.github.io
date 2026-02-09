@@ -1,8 +1,12 @@
-/* Reset basic defaults */
+
 * {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -61,6 +65,7 @@ body {
   color: #000;
   font-family: Helvetica, -apple-system, sans-serif;
 }
+
 
 .cursor-glow {
   position: fixed;
@@ -235,7 +240,7 @@ h4 {
 }
 
 .project-details {
-  max-width: 1100px;
+  /* max-width: 1100px; */
   margin: 0 auto;   
   padding: 30pt;
   display: grid;
@@ -284,7 +289,8 @@ h4 {
   max-width: 1000px;
   text-align: center;
   align-items: center;
-  margin: 0 30 0 30;
+  margin: 30pt auto;
+  padding: 0 2rem;
 }
 
 .project-details img {
@@ -406,7 +412,7 @@ h4 {
 }
 
 #work-title {
-    padding-left: 30pt;
+    padding-left: 30px;
 }
 
 #work-title h2 {
@@ -416,7 +422,7 @@ h4 {
 /* Footer section - Homepage */
 
 .footer{
-    padding: 0pt 10pt 30pt 10pt;
+    padding: 0px 10px 30px 10px;
 }
 
 .back-to-top {
@@ -434,7 +440,7 @@ h4 {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  padding: 30pt;
+  padding: 30px;
   margin-top: 40pt;
   margin-bottom: 120pt;
 }
@@ -636,7 +642,7 @@ h4 {
 }
 
 .credentials-column {
-  padding-right: 5%;
+  padding-right: 15px;
 }
 
 .credentials-column h2 {
@@ -652,7 +658,7 @@ h4 {
 .credential-item ul {
   list-style-type: disc;
   font-size: 12pt;
-  padding-left: 20pt;
+  padding-left: 20px;
   margin-bottom: 10pt;
 }
 
@@ -671,6 +677,7 @@ h4 {
 .credential-header span {
   font-size: 12pt;
   opacity: 0.6;
+  white-space: nowrap;
 }
 
 .credential-item p {
@@ -723,7 +730,7 @@ h4 {
 .section-content p {
   font-size: 15pt;
   margin: 0;
-  padding-left: 25pt;
+  padding-left: 25px;
   margin-bottom: 10pt;
   line-height: 1.7;
   max-width: 65ch;
@@ -733,7 +740,7 @@ h4 {
 .section-content ul {
   list-style-type: disc;
   font-size: 15pt;
-  padding-left: 40pt;
+  padding-left: 40px;
   margin-bottom: 10pt;
 }
 
@@ -751,71 +758,27 @@ h4 {
   padding-top: 3rem;
 }
 
-/* @media (max-width: 900px) {
-
-  .intro {
-    grid-template-columns: 1fr;
-  }
-
-  .about-row,
-  .about-row.reverse {
-    grid-template-columns: 1fr;
-    direction: ltr;
-  }
-
-  .about-image {
-    height: 300px;
-  }
-
-  .creative-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .credentials {
-    grid-template-columns: 1fr;
-  }
-
-  .project-section {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .creative-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-@media (max-width: 600px) {
-  .creative-grid {
-    grid-template-columns: 1fr;
-  }
-} */
-
-
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   body {
   margin: 0;
   }
 
   .hero {
-  padding: 2rem;
+    padding: 2rem 1.5rem;
   }
 
   .hero-image {
-  position: relative;
-  top: auto;
-  right: auto;
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 320px;
+    position: relative;
+    width: 100%;
+    right: auto;
+    top: auto;
   }
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20pt;
+    padding: 20px;
     font-size: 12pt;
   }
 
@@ -835,8 +798,8 @@ h4 {
   }
 
   nav img {
-    width: 50pt;
-    height: 50pt;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
   }
 
@@ -848,16 +811,25 @@ h4 {
   font-size: 35pt;
   font-weight: 600;
   letter-spacing: -0.05em;
-  line-height: 0.85;
+  line-height: 1;
   margin: 0;
   margin-top: 20pt;
   margin-bottom: 40pt;
-  white-space: nowrap;
+  padding: 10px;
+  white-space: normal;
+  }
+
+
+  #work-title h2 {
+  font-size: 25pt;
+  font-weight: 500;
+  padding: 10px 0 5px 10px;
   }
 
   #work-title h3 {
   font-size: 15pt;
   font-weight: 400;
+  padding: 10px;
   }
 
   .projects-grid {
@@ -886,9 +858,67 @@ h4 {
   grid-template-columns: 1fr;
   }
 
+  .credentials-column {
+  padding: 0px;
+  }
+
+  .credentials-column h2 {
+    margin-bottom: 2rem;
+    font-size: 20pt;
+    color: #8855FF;
+  }
+
   .project-section {
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  }
+
+  /* LEFT COLUMN (text) */
+  .project-info .text-column {
+  padding: 0px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+
+  .projects-header h2 {
+  font-size: 15pt;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  }
+
+  .projects-header h3 {
+  font-size: 12pt;
+  font-weight: 200;
+  }
+
+
+  .project-info .image-column img {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  right: auto;
+  top: auto;
+  display: block;
+  }
+
+  .intro-content p {
+  font-size: 10pt;
+  line-height: 1.6;
+  opacity: 0.85;
+  }
+
+  .project-meta h3 {
+  font-size: 12pt;
+  font-weight: 500;
+  }
+
+  .project-meta span {
+  font-size: 12pt;
+  opacity: 0.6;
+  text-align: end;
   }
 
   .creative-grid {
@@ -896,11 +926,12 @@ h4 {
   }
 
   footer{
-  padding: 0pt 10pt 10pt 10pt;
+  width: auto;
+  padding: 30px;
   }
 
   footer h3 {
-    padding-right: 10pt;
+    padding-right: 10px;
   }
 
   h2 {
@@ -927,7 +958,7 @@ h4 {
   display: flex;
   flex-direction: column;
   gap: 6rem;
-  max-width: 70%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
   }
@@ -938,5 +969,10 @@ h4 {
     line-height: 1.7;
     opacity: 0.9;
   }
+
+  .cursor-glow {
+  display: none;
+  }
+
 
 }
