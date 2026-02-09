@@ -203,7 +203,8 @@ nav img {
   margin: 0;
   margin-top: 20pt;
   margin-bottom: 40pt;
-  white-space: nowrap;
+  text-align: center;
+  word-break: break-word;
 }
 
 .wordmark .tm {
@@ -853,7 +854,8 @@ footer {
   margin-top: 20pt;
   margin-bottom: 40pt;
   padding: 10px;
-  white-space: normal;
+  text-align: center;
+  word-break: break-word;
   }
 
 
@@ -911,14 +913,24 @@ footer {
   }
 
   /* LEFT COLUMN (text) */
-  .project-info .text-column {
-  padding: 0px;
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  .project-info {
+    grid-template-columns: 1fr;  /* single column */
   }
+
+  .project-info .text-column {
+    order: 1;
+    padding: 2rem; /* reduce that huge 150px padding */
+  }
+
+  .project-info .image-column {
+    order: 2;
+  }
+
+  .project-info .image-column img {
+    height: auto;   /* important */
+  }
+
+}
 
   .projects-header h2 {
   font-size: 15pt;
