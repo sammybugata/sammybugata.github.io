@@ -796,6 +796,10 @@ footer {
     color: #fff;
   }
 
+  .logo {
+    font-size: 14pt;
+  }
+
   .hero {
     padding: 2rem 1.5rem;
   }
