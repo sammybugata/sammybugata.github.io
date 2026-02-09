@@ -927,7 +927,7 @@ h4 {
 
   footer{
   width: auto;
-  padding: 30px;
+  /* padding: 30px; */
   }
 
   footer h3 {
@@ -935,11 +935,11 @@ h4 {
   }
 
   h2 {
-  font-size: 14pt;
+  font-size: 14px;
   }
 
   h3 {
-  font-size: 12pt;
+  font-size: 12px;
   }
 
   .about {
