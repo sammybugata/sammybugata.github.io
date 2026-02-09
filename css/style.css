@@ -278,7 +278,7 @@ h4 {
   width: 100%;
   /* max-width: 600px; */
   height: 100%;
-  object-fit: cover; /* fills column without warping */
+  object-fit: cover;
 }
 
 
@@ -931,7 +931,7 @@ footer {
   }
 
   .project-info .image-column img {
-    height: auto;   /* important */
+    height: auto; 
   }
 
 }
@@ -951,7 +951,7 @@ footer {
   .project-info .image-column img {
   position: relative;
   width: 100%;
-  max-width: 320px;
+  /* max-width: 320px; */
   right: auto;
   top: auto;
   display: block;
