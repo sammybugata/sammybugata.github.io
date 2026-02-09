@@ -898,15 +898,16 @@ footer nav h3 {
   .about {
     grid-template-columns: 1fr;
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   .about-details {
     max-width: 100%;
   }
 
-  .intro-content {
+  /* .intro-content {
     order: 1;
-  }
+  } */
 
   .intro-image {
     display: none;
