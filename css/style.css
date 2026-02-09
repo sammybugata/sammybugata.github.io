@@ -11,6 +11,7 @@ html, body {
 
 .logo {
   font-weight: 600;
+  font-size: 25px;
 
   background: linear-gradient(
     90deg,
@@ -111,7 +112,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30pt;
+  padding: 15pt 30pt;
   font-size: 18pt;
 }
 
@@ -148,7 +149,8 @@ nav img {
 /* Hero Section */
 .hero {
   position: relative;
-  padding: 4rem 6rem;
+  padding: 3rem 6rem 2rem 6rem;
+  gap: 4rem;
 }
 
 .hero-content {
@@ -157,10 +159,12 @@ nav img {
 }
 
 .hero h1 {
-  font-size: 30pt;
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.02em;
+
+  margin: 0;
 }
 
 .hero-image {
@@ -196,7 +200,7 @@ nav img {
 }
 
 .wordmark h2 {
-  font-size: 119pt;
+  font-size: 115pt;
   font-weight: 600;
   letter-spacing: -0.05em;
   line-height: 0.85;
@@ -239,7 +243,7 @@ h4 {
 }
 
 .project-details {
-  /* max-width: 1100px; */
+  max-width: 1100px;
   margin: 0 auto;   
   padding: 30pt;
   display: grid;
@@ -418,18 +422,27 @@ h4 {
     font-size: 30pt;
     font-weight: 400;
 }
-/* Footer section - Homepage */
 
-footer{
-    padding: 0px 10px 30px 10px;
+#work-title h3 {
+    font-size: 20pt;
+    font-weight: 400;
 }
 
-footer {
+/* Footer section - Homepage */
+footer{
+    padding: 0px 10px 10px 10px;
+}
+
+footer nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  flex-wrap: wrap; /* important safety */
+  align-items: center; /* vertical centering */
+  gap: 3rem;
+  font-size: 20px;
+}
+
+footer nav h3 {
+  font-size: 20px;
 }
 
 .back-to-top {
@@ -444,7 +457,7 @@ footer {
 /* Hero section - About Page */
 .about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* FORCE 2 columns */
   gap: 4rem;
   align-items: center;
   padding: 30px;
@@ -588,11 +601,6 @@ footer {
   display: block;
 }
 
-.about-details p {
-  font-size: 12pt;
-  line-height: 1.7;
-  max-width: 100%;
-}
 
 .about-grid {
   width: 80%;
@@ -783,13 +791,19 @@ footer {
     margin: 0;
   }
 
-  footer a {
+  footer nav {
+    flex-direction: column;
+    align-items: center; /* aligns everything left */
+    gap: 1rem;
+  }
+
+  footer nav a {
     font-size: 15px;
     color: #fff;
     font-family: Helvetica, -apple-system, sans-serif;
   }
 
-  footer h3 {
+  footer nav h3 {
     font-size: 20px;
     color: #fff;
   }
@@ -932,8 +946,6 @@ footer {
     height: auto; 
   }
 
-}
-
   .projects-header h2 {
   font-size: 15pt;
   font-weight: 500;
@@ -984,37 +996,8 @@ footer {
   font-size: 12px;
   }
 
-  .about {
-    grid-template-columns: 1fr;
-  }
-
-  .intro-content {
-    order: 1;
-  }
-
-  .intro-image {
-    order: 2;
-  }
-
-  .about-details {
-  display: flex;
-  flex-direction: column;
-  gap: 6rem;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 2rem;
-  }
-
-  .about-details p {
-    font-size: 12pt;
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-    opacity: 0.9;
-  }
-
   .cursor-glow {
   display: none;
   }
-
 
 }
