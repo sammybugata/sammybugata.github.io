@@ -773,6 +773,13 @@ footer nav h3 {
   padding-top: 3rem;
 }
 
+.project-details video {
+    width: 1000px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
 @media (max-width: 768px) {
   body {
   margin: 0;
@@ -1016,6 +1023,11 @@ footer nav h3 {
 
   .cursor-glow {
   display: none;
+  }
+
+  .project-details video {
+    width: 100%;
+    height: auto;
   }
 
 }
