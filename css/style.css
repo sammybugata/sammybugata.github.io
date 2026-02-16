@@ -774,9 +774,11 @@ footer nav h3 {
 }
 
 .project-details video {
-    width: 1000px;
+    width: 1100px;
+    max-width: 100%;
+    grid-column: 1 / -1;
     height: auto;
-    border-radius: 10px;
+    display: block;
 }
 
 
