@@ -283,6 +283,11 @@ h4 {
     margin-bottom: 0.5rem;
 }
 
+.project-details figcaption {
+    grid-column: 1 / -1;
+    text-align: center;
+    width: 100%;
+}
 
 /* Projects section - Homepage */
 .projects {
@@ -475,6 +480,15 @@ h4 {
 #work-title h3 {
     font-size: 20pt;
     font-weight: 400;
+}
+
+.project-details iframe {
+    width: 1100px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    display: block;
+    grid-column: 1 / -1;
 }
 
 /* Footer section - Homepage */
