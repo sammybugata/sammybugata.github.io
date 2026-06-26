@@ -49,6 +49,18 @@ html, body {
 
   animation: gradientMove 6s linear infinite;
 }
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
 
 @keyframes gradientMove {
   0% {
@@ -67,6 +79,21 @@ body {
   font-family: Helvetica, -apple-system, sans-serif;
 }
 
+header {
+    max-width: 100%;
+    padding: 0 5rem;
+
+    background: #ffffff;
+    border: 1px solid #ececec;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 0;
+}
 
 .cursor-glow {
   position: fixed;
@@ -86,7 +113,7 @@ body {
   );
 
   transform: translate(-50%, -50%);
-  filter: blur(40px);
+  filter: blur(60px);
   z-index: -1; 
 }
 
@@ -113,7 +140,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 15pt 30pt;
-  font-size: 18pt;
+  font-size: 15pt;
 }
 
 nav ul {
@@ -149,7 +176,7 @@ nav img {
 /* Hero Section */
 .hero {
   position: relative;
-  padding: 1rem 6rem 2rem 6rem;
+  padding: 3rem 6rem 2rem 6rem;
   gap: 4rem;
 }
 
@@ -194,6 +221,13 @@ nav img {
   width: 100%;
 }
 
+.divider-1 {
+  height: 1px;
+  background: #999999;
+  margin: 100pt 0 0pt 0;
+  width: 100%;
+}
+
 .wordmark {
   overflow: hidden;
   padding: 0 5rem 4rem;
@@ -216,7 +250,7 @@ nav img {
 }
 
 .skills-marquee {
-    padding: 70px 0;
+    padding: 60px 0;
     overflow: hidden;
 }
 
@@ -434,19 +468,23 @@ h4 {
 
 .project-meta {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .project-meta h3 {
   font-size: 15pt;
   font-weight: 500;
+  padding: 0;
+  margin: 0;
 }
 
 .project-meta span {
   font-size: 15pt;
   opacity: 0.6;
-  text-align: end;
+  text-align: left;
+  margin: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project-card img {
@@ -461,7 +499,7 @@ h4 {
 
 .project-meta span {
   transition: opacity 0.3s ease;
-  font-size: 15pt;
+  font-size: 13pt;
 }
 
 .project-card:hover .project-meta span {
@@ -491,21 +529,42 @@ h4 {
     grid-column: 1 / -1;
 }
 
-/* Footer section - Homepage */
-footer{
-    padding: 0px 10px 10px 10px;
+/* Footer */
+footer {
+    margin-top: 6rem;
+    padding: 4rem 3rem;
+    background: #ffffff;
+    border-top: 1px solid #e5e5e5;
 }
 
-footer nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* vertical centering */
-  gap: 3rem;
-  font-size: 20px;
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
 }
 
-footer nav h3 {
-  font-size: 20px;
+.footer-column h3 {
+    margin: 0 0 1rem;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #666;
+}
+
+.footer-column a,
+.footer-column p {
+    margin: 0;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.footer-column a:hover {
+    color: #8855FF;
 }
 
 .back-to-top {
